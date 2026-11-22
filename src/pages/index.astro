@@ -46,6 +46,7 @@ import { PROFILE, SOCIALS } from "../data/links";
           href={social.url}
           target="_blank"
           rel="noopener noreferrer"
+          data-pause-audio
           class="group flex items-center justify-between border border-[var(--border)] bg-white px-4 py-4 text-base transition-colors hover:border-[#111111]"
         >
           <span class="lowercase font-medium">{social.name}</span>
@@ -55,6 +56,14 @@ import { PROFILE, SOCIALS } from "../data/links";
         </a>
       ))}
     </div>
+
+    <script>
+      import { pausePlayback } from "../components/audioState";
+
+      document.querySelectorAll("[data-pause-audio]").forEach((link) => {
+        link.addEventListener("click", () => pausePlayback());
+      });
+    </script>
   </section>
 
   <footer class="font-mono-tech flex flex-wrap items-center justify-between gap-2 border-t border-[var(--border)] pt-4 text-[11px] text-[var(--muted)]">

@@ -70,6 +70,10 @@ export async function togglePlayback() {
   }
 }
 
+export function pausePlayback() {
+  audio?.pause();
+}
+
 export async function attemptAutoplay() {
   try {
     await startPlayback();
