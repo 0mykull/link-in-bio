@@ -1,6 +1,10 @@
-import { isPlaying, togglePlayback } from "./audioState";
+import { onMount } from "solid-js";
+import { attemptAutoplay, isPlaying, togglePlayback } from "./audioState";
 
 export default function PlayButton() {
+  onMount(() => {
+    void attemptAutoplay();
+  });
   return (
     <button
       type="button"

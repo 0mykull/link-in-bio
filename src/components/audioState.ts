@@ -1,7 +1,7 @@
 import { createSignal } from "solid-js";
 
-export const AUDIO_SRC = "/children.mp3";
-export const AUDIO_TITLE = "robert miles — children (inst.)";
+export const AUDIO_SRC = "/places-to-be.mp3";
+export const AUDIO_TITLE = "fred again.. — places to be";
 
 const [isPlaying, setIsPlaying] = createSignal(false);
 const [isReady, setIsReady] = createSignal(false);
@@ -45,22 +45,52 @@ function ensureContext() {
   setIsReady(true);
 }
 
-export async function togglePlayback() {
+async function startPlayback() {
   ensureAudio();
+  if (!audio || !audio.paused) return;
+
+  ensureContext();
+  if (ctx?.state === "suspended") {
+    await ctx.resume();
+  }
+  await audio.play();
+}
+
+export async function togglePlayback() {
+  if (!audio) ensureAudio();
   if (!audio) return;
 
   if (audio.paused) {
-    ensureContext();
-    if (ctx?.state === "suspended") {
-      await ctx.resume();
-    }
     try {
-      await audio.play();
+      await startPlayback();
     } catch {
       setIsPlaying(false);
     }
   } else {
     audio.pause();
+  }
+}
+
+export async function attemptAutoplay() {
+  try {
+    await startPlayback();
+  } catch {
+    const resume = async () => {
+      cleanup();
+      try {
+        await startPlayback();
+      } catch {
+        setIsPlaying(false);
+      }
+    };
+    const cleanup = () => {
+      window.removeEventListener("pointerdown", resume);
+      window.removeEventListener("keydown", resume);
+      window.removeEventListener("touchstart", resume);
+    };
+    window.addEventListener("pointerdown", resume, { passive: true });
+    window.addEventListener("keydown", resume);
+    window.addEventListener("touchstart", resume, { passive: true });
   }
 }
 

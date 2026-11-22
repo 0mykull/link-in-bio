@@ -1,14 +1,14 @@
 export interface LinkItem {
   id: string;
-  syntax: string;       // djdave.xyz style method call
-  label: string;        // human description
-  tag: string;          // raw archive stamp (fredagain.com style)
+  syntax: string;
+  label: string;
+  tag: string;
   url: string;
   featured?: boolean;
 }
 
 export const PROFILE = {
-  handle: "michael",
+  handle: "michael.",
   alias: "mykull",
   location: "tallahassee, fl",
   status: "building embedded systems, cli tools & house sets",

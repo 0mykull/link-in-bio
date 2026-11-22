@@ -10,16 +10,14 @@ import { PROFILE, SOCIALS } from "../data/links";
 <BaseLayout title={`${PROFILE.handle} — index`} description={PROFILE.bio}>
   <!-- Top Index Header (Registered Commons inspired) -->
   <header class="mb-8 space-y-4">
-    <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-2">
+    <div class="flex items-center justify-between gap-2">
       <h1 class="text-base font-medium tracking-tight lowercase">
         {PROFILE.handle}
         <span class="font-mono-tech ml-1.5 text-xs font-normal text-[var(--muted)]">
           ({PROFILE.alias})
         </span>
       </h1>
-      <div class="justify-self-end">
-        <PlayButton client:load />
-      </div>
+      <PlayButton client:load />
     </div>
 
     <TelemetryBar client:load />
