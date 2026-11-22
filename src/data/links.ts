@@ -12,7 +12,7 @@ export const PROFILE = {
   alias: "mykull",
   location: "tallahassee, fl",
   status: "building embedded systems, cli tools & house sets",
-  bio: "hi im michael & i like to make things. mostly systems software, terminal tools, and electronic music. currently embedded engineer @ syntech, finishing my ms in swe, and learning to dj.",
+  bio: "hi im michael & i like to make things on my macbook. currently working as an embedded engineer.",
   email: "hi@msjr.dev",
 };
 
@@ -54,5 +54,5 @@ export const SOCIALS = [
   { name: "x / twitter", handle: "@0mykull", url: "https://x.com" },
   { name: "soundcloud", handle: "misogochi", url: "https://soundcloud.com" },
   { name: "spotify", handle: "rotations", url: "https://open.spotify.com" },
-  { name: "email", handle: "ping me", url: "mailto:michael@msjr.dev" },
+  { name: "email", handle: "ping me", url: "mailto:hi@msjr.dev" },
 ];
