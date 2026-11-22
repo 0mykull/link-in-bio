@@ -46,6 +46,6 @@ npm run preview
 
 ## customizing content
 
-- **bio, links & socials:** edit `src/data/links.ts`
+- **bio & socials:** edit `src/data/links.ts`
 - **theme & typography:** edit `src/styles/global.css`
-- **interactive islands:** edit `src/components/TelemetryBar.tsx` and `src/components/Guestbook.tsx`
+- **interactive islands:** edit `src/components/TelemetryBar.tsx`, `src/components/PlayButton.tsx`, and `src/components/AsciiArt.tsx`

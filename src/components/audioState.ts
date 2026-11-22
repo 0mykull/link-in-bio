@@ -1,7 +1,6 @@
 import { createSignal } from "solid-js";
 
 export const AUDIO_SRC = "/places-to-be.mp3";
-export const AUDIO_TITLE = "fred again.. — places to be";
 
 const [isPlaying, setIsPlaying] = createSignal(false);
 const [isReady, setIsReady] = createSignal(false);

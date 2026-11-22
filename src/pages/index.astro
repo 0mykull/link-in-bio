@@ -3,12 +3,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import TelemetryBar from "../components/TelemetryBar";
 import PlayButton from "../components/PlayButton";
 import AsciiArt from "../components/AsciiArt";
-// import Guestbook from "../components/Guestbook";
 import { PROFILE, SOCIALS } from "../data/links";
 ---
 
 <BaseLayout title={`${PROFILE.handle} — index`} description={PROFILE.bio}>
-  <!-- Top Index Header (Registered Commons inspired) -->
+  <!-- Top Index Header -->
   <header class="mb-8 space-y-4">
     <div class="flex items-center justify-between gap-2">
       <h1 class="text-base font-medium tracking-tight lowercase">
@@ -23,7 +22,7 @@ import { PROFILE, SOCIALS } from "../data/links";
     <TelemetryBar client:load />
   </header>
 
-  <!-- Bio Section (mayvmusic / buildspace lowercase editorial voice) -->
+  <!-- Bio -->
   <section class="mb-10 space-y-3 text-[15px] leading-relaxed text-[#222222] lowercase">
     <p>{PROFILE.bio}</p>
     <p class="font-mono-tech text-xs text-[var(--muted)]">
@@ -33,7 +32,7 @@ import { PROFILE, SOCIALS } from "../data/links";
 
   <AsciiArt client:load />
 
-  <!-- Socials (main section) -->
+  <!-- Socials -->
   <section class="mb-10">
     <div class="mb-3 border-b border-[#111111] pb-1.5">
       <h2 class="font-mono-tech text-xs uppercase tracking-wider">
@@ -58,78 +57,6 @@ import { PROFILE, SOCIALS } from "../data/links";
     </div>
   </section>
 
-  <!--
-    [01] Routes / Projects — commented out
-
-  <section class="mb-10">
-    <div class="mb-3 flex items-center justify-between border-b border-[#111111] pb-1.5">
-      <h2 class="font-mono-tech text-xs uppercase tracking-wider">
-        [01] routes &amp; builds
-      </h2>
-      <span class="font-mono-tech text-[11px] text-[var(--muted)]">
-        {ROUTES.length} entries
-      </span>
-    </div>
-
-    <ul class="divide-y divide-[var(--border)]">
-      {ROUTES.map((item) => (
-        <li>
-          <a
-            href={item.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group flex flex-col justify-between gap-1 py-3.5 transition-colors hover:bg-black/[0.025] sm:flex-row sm:items-center sm:px-2"
-          >
-            <div class="space-y-0.5">
-              <div class="flex items-center gap-2">
-                <span class="font-mono-tech text-[11px] text-[var(--muted)]">
-                  {item.id}
-                </span>
-                <span class="font-mono-tech text-sm font-medium text-[#111111] group-hover:underline">
-                  {item.syntax}
-                </span>
-                {item.featured && (
-                  <span class="font-mono-tech text-[10px] text-[#111111]">★</span>
-                )}
-              </div>
-              <p class="pl-6 text-xs lowercase text-[var(--muted)]">
-                {item.label}
-              </p>
-            </div>
-
-            <div class="flex items-center justify-between pl-6 sm:justify-end sm:gap-3 sm:pl-0">
-              <span class="font-mono-tech text-[10px] tracking-tight text-[var(--muted)]">
-                {item.tag}
-              </span>
-              <span class="font-mono-tech text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                ↗
-              </span>
-            </div>
-          </a>
-        </li>
-      ))}
-    </ul>
-  </section>
-  -->
-
-  <!--
-    [03] Ping / Guestbook — commented out
-
-  <section class="mb-12">
-    <div class="mb-3 flex items-center justify-between border-b border-[#111111] pb-1.5">
-      <h2 class="font-mono-tech text-xs uppercase tracking-wider">
-        [03] ping &amp; guestbook
-      </h2>
-      <span class="font-mono-tech text-[11px] text-[var(--muted)]">
-        local_board
-      </span>
-    </div>
-
-    <Guestbook client:visible email={PROFILE.email} />
-  </section>
-  -->
-
-  <!-- Colophon (Registered Commons inspired) -->
   <footer class="font-mono-tech flex flex-wrap items-center justify-between gap-2 border-t border-[var(--border)] pt-4 text-[11px] text-[var(--muted)]">
     <span>© mykull, {new Date().getFullYear()}</span>
     <span>【=◈︿◈=】</span>
