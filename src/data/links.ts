@@ -3,7 +3,7 @@ export const PROFILE = {
   alias: "mykull",
   location: "tallahassee, fl",
   status: "exploring tallahassee, learning how to dj, reading dungeon crawler carl",
-  bio: "hi im michael & i like to make things on my computer. currently working as an embedded engineer.",
+  bio: "hi im michael & i like to make things on my computer, mostly software and music related stuff, currently working as an embedded engineer but when im not working im usually at the gym or playing on my switch",
 };
 
 export const SOCIALS = [
