@@ -2,7 +2,7 @@ export const PROFILE = {
   handle: "michael.",
   alias: "mykull",
   location: "tallahassee, fl",
-  status: "building embedded systems, cli tools & house sets",
+  status: "exploring tallahassee, learning how to dj, reading dungeon crawler carl",
   bio: "hi im michael & i like to make things on my computer. currently working as an embedded engineer.",
 };
 
