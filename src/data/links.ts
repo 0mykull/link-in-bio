@@ -1,6 +1,6 @@
 export const PROFILE = {
   handle: "michael.",
-  alias: "mykull",
+  alias: "my-kull",
   location: "tallahassee, fl",
   status: "exploring, learning to dj, training for 5k",
   bio: "hi im michael & i like to make things on my computer, mostly software and music related stuff. currently working as an embedded engineer in tallahassee.",
